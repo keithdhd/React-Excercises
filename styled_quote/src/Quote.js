@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Quote = ({by, source, children}) => {
     return (
-        <figure>
+        <Figure>
             <QuoteContent>{children}</QuoteContent>
             <figcaption>
                     <Author>
@@ -11,9 +11,13 @@ const Quote = ({by, source, children}) => {
                         </SourceLink>
                     </Author>
             </figcaption>
-        </figure>
+        </Figure>
     );
 };
+
+const Figure = styled.figure`
+  text-align: center;
+`
 
 const QuoteContent = styled.blockquote`
   margin: 0 auto;
@@ -40,6 +44,10 @@ const Author = styled.cite`
 const SourceLink = styled.a`
   text-decoration: none;
   color: hsl(0deg 0% 35%);
+
+  &:hover {
+    text-decoration: underline;
+  }
 
   &::before {
     content: '-';

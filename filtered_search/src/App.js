@@ -1,22 +1,30 @@
 import './App.css';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 
 function App() {
 
-  const countries = [
-    "Argentina",
-    "Australia",
-    "Bangladesh",
-    "Belgium",
-    "Canada",
-    "Croatia",
-    "Spain",
-    "United Kingdom",
-    "USA"
-  ];
+  const [countries, setCountries] = useState([]);
+  const [filteredList, setFilteredList] = useState([]);
 
-  const [filteredList, setFilteredList] = useState(countries);
+  useEffect( () => {
+    fetchCountries();
+  }, []);
+
+  const fetchCountries = () => {
+    fetch("https://restcountries.com/v3.1/all")
+      .then( res => res.json() )
+      .then( (data) => {
+
+        const countryNames = data.map((country) => {
+          return country.name.common;
+        })
+
+        setFilteredList(countryNames);
+        setCountries(countryNames);
+      }) 
+  }
+
 
   const handleSearch = (event) => {
 
@@ -46,7 +54,7 @@ function App() {
 }
 
 const FilteredSearch = styled.div`
-  width: 200px;
+  width: 300px;
   margin: 0 auto;
   font-size: 1.5rem;
 `;

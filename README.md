@@ -93,8 +93,9 @@ export default App;
 - The image will need to receive its source as a prop. Find out how to pass a tag attribute as a prop to a styled compoment <a href="https://styled-components.com/docs/faqs#when-to-use-attrs">here</a>
 
 
-
 ## Dynamic Search Filter
 
-## 
+Create a filtered search component for countries. Your component should fetch all the countries from the endpoint: `https://restcountries.com/v3.1/all` 
+
+![Filtered Countries](./images/filtered-countries.png);
 
