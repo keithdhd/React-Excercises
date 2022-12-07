@@ -22,14 +22,14 @@ function App() {
 
         setFilteredList(countryNames);
         setCountries(countryNames);
-      }) 
+      })
   }
 
 
   const handleSearch = (event) => {
 
     const filteredValues = countries.filter((country) =>  {
-        return country.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1;
+        return country.toLowerCase().includes(event.target.value.toLowerCase());
       }
     );
 
