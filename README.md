@@ -1,15 +1,17 @@
 # React Exercises
 
+It's easiest to create a new `create-react-app` for each exercise.
+
 ## Styled Quote
 
-Create a Quote compoment using styled components. Our designer has created a mock-up of what she wants our list of quotes to look like. 
+Create a Quote compoment using styled components. Our designer has created a mock-up of what she wants our list of quotes to look like.
 
 ![Quote](./images/styled-quote.png)
 
 ### Your App.js should look like this:
 
 ```js
-import Quote from './Quote'; 
+import Quote from './Quote';
 
 function App() {
   return (
@@ -51,24 +53,24 @@ function App() {
 
   const [comments, setComments] = useState([
     {
-      imageUrl: "https://picsum.photos/100", 
-      userName: "William Wise", 
-      datePosted: new Date(2022, 7, 1), 
-      comment: "This comment is the wisest thing you've ever read" 
+      imageUrl: "https://picsum.photos/100",
+      userName: "William Wise",
+      datePosted: new Date(2022, 7, 1),
+      comment: "This comment is the wisest thing you've ever read"
     },
     {
-      imageUrl: "https://picsum.photos/100/100", 
-      userName: "Buddha", 
-      datePosted: new Date(600, 6, 18), 
-      comment: "As your focus transcends all types of objects, Unfixed on any mark of concreteness, Remain quiet, tranquil and awake!" 
+      imageUrl: "https://picsum.photos/100/100",
+      userName: "Buddha",
+      datePosted: new Date(600, 6, 18),
+      comment: "As your focus transcends all types of objects, Unfixed on any mark of concreteness, Remain quiet, tranquil and awake!"
     }
   ]);
 
   const cards = comments.map( (commentObj, i) => {
-    return( 
+    return(
       <CommentCard key={i}
         imageUrl={commentObj.imageUrl}
-        userName={commentObj.userName} 
+        userName={commentObj.userName}
         datePosted={commentObj.datePosted} >
           {commentObj.comment}
       </CommentCard>
@@ -90,12 +92,10 @@ export default App;
 - You should have only one component (CommentCard.js) in addition to App.js
 - Use styled components in CommentCard.js
 - Use <a href="https://day.js.org/">dayjs</a> and its <a href="https://day.js.org/docs/en/plugin/relative-time">Relative Time</a> plugin to display the 'ago' text
-- The image will need to receive its source as a prop. Find out how to pass a tag attribute as a prop to a styled compoment <a href="https://styled-components.com/docs/faqs#when-to-use-attrs">here</a>
 
 
 ## Dynamic Search Filter
 
-Create a filtered search component for countries. Your component should fetch all the countries from the endpoint: `https://restcountries.com/v3.1/all` 
+Create a filtered search component for countries. Your component should fetch all the countries from the endpoint: `https://restcountries.com/v3.1/all`
 
 ![Filtered Countries](./images/filtered-countries.png);
-

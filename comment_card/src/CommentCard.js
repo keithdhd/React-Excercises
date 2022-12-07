@@ -34,7 +34,7 @@ const Wrapper = styled.li`
     border-radius: 5px;
 `;
 
-const ProfileImage = styled.img.attrs(props => ({ src: props.src }))`
+const ProfileImage = styled.img`
     width: 100px;
     height: 100px;
     opacity: 0.8;
@@ -46,7 +46,7 @@ const Comment = styled.blockquote`
 `;
 
 const Info = styled.span`
-    color: #5252f9; 
+    color: #5252f9;
     a {
         text-decoration: none;
 
@@ -66,7 +66,7 @@ const Details = styled.div`
 `;
 
 const UserName = styled.div`
-    color: #5252f9; 
+    color: #5252f9;
     a {
         text-decoration: none;
 
