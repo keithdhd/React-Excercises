@@ -17,7 +17,7 @@ const CommentCard = ({imageUrl, userName, datePosted, children}) => {
                     {children}
                 </Comment>
                 <Info>
-                    <a href="">Like</a> &#8226;  <a href="">Reply</a> &#8226; {dayjs().to(dayjs(datePosted))}
+                    <a href="">Like</a> &#8226;  <a href="">Reply</a> &#8226; {dayjs(datePosted).toNow(true)} ago
                 </Info>
             </Details>
         </Wrapper>
